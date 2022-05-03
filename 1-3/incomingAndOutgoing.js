@@ -2,17 +2,17 @@
 
 const users = [
     {
-      name: "Salvio",
+      name: 'Salvio',
       incomings: [115.3, 48.7, 98.3, 14.5],
       outgoings: [85.3, 13.5, 19.9]
     },
     {
-      name: "Marcio",
+      name: 'Marcio',
       incomings: [24.6, 214.3, 45.3],
       outgoings: [185.3, 12.1, 120.0]
     },
     {
-      name: "Lucia",
+      name: 'Lucia',
       incomings: [9.8, 120.3, 340.2, 45.3],
       outgoings: [450.2, 29.9]
     }
