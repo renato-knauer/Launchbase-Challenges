@@ -172,6 +172,23 @@ footer {
     position: relative;
 }
 
+.modal .maximize-modal {
+    color: black;
+    position: absolute;
+    right: 45px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.modal .minimize-modal {
+    color: black;
+    position: absolute;
+    right: 45px;
+    top: 8px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
 .modal .close-modal {
     color: black;
     position: absolute;
