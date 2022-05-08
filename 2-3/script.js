@@ -1,5 +1,6 @@
 const modalOverlay = document.querySelector('.modal-overlay')
-const cards = document.querySelectorAll('.card')
+const cardsClassesHtml = document.querySelectorAll('.cardClassesHtml')
+const cardsContentHtml = document.querySelectorAll('.cardContentHtml')
 const modal = document.querySelector('.modal')
 const maximizeModal = document.querySelector('.maximize-modal')
 const minimizeModal = document.querySelector('.minimize-modal')
@@ -13,7 +14,11 @@ function returnModalToStandard(modal, maximizeModal, minimizeModal) {
     minimizeModal.style.visibility = 'hidden'
 }
 
-for (let card of cards) {
+
+/*=== Cards in page classes.html ===*/
+
+
+for (let card of cardsClassesHtml) {
     card.addEventListener('mouseover', function(){
         card.style.cursor = 'pointer'
         card.style.opacity = '0.5'
@@ -22,7 +27,38 @@ for (let card of cards) {
     card.addEventListener('mouseout', function(){
         card.style.opacity = '1'
     })
+
+    card.addEventListener('click', function(){
+        const videoId = card.getAttribute('id')
+
+        modalOverlay.classList.add('active')
+        modalOverlay.querySelector('iframe').src = `https://www.youtube.com/embed/${videoId}`
+        document.querySelector('footer').style.visibility = 'hidden'
+    })
+}
+
+document.querySelector('.close-modal').addEventListener('click', function(){
+    modalOverlay.classList.remove('active')
+    modalOverlay.querySelector('iframe').src = ''
+    document.querySelector('footer').style.visibility = 'visible'
+
+    returnModalToStandard(modal, maximizeModal, minimizeModal)
+})
+
+
+/*=== Cards in page content.html ===*/
+
+
+for (let card of cardsContentHtml) {
+    card.addEventListener('mouseover', function(){
+        card.style.cursor = 'pointer'
+        card.style.opacity = '0.5'
+    })
     
+    card.addEventListener('mouseout', function(){
+        card.style.opacity = '1'
+    })
+
     card.addEventListener('click', function(){
         const postId = card.getAttribute('id')
 
